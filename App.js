@@ -36,16 +36,14 @@ const App = () => {
   }, []);
 
   const scanBarcode = e => {
-    console.log('E', e);
     if (e) {
-      setBarcodeValue(e);
+      setBarcodeValue(e.data);
       setShowScanner(false);
     }
   };
 
   const scanHandler = deviceEvent => {
     if (deviceEvent.data) {
-      console.log('deviceEvent.data', deviceEvent.data);
       setBarcodeValue(deviceEvent.data);
       setShowScanner(false);
     } else {
